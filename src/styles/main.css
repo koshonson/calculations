@@ -23,7 +23,7 @@ body {
 	min-height: calc(
 		100vh - 7vmax
 	); /* 7vmax is value of navbar height, see class .menu in ./navbar.css */
-	padding: 5vmin;
+	padding: 15px 5vmin 5vmin 5vmin;
 	flex-direction: column;
 }
 
@@ -45,7 +45,7 @@ body {
 
 @media only screen and (max-width: 632px) {
 	html {
-		font-size: 60%;
+		font-size: 80%;
 	}
 
 	body {

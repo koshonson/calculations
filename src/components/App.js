@@ -2,7 +2,7 @@ import '../styles/main.css';
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
-import Calculations from './Calculations';
+import Calculations from './calculations/Calculations';
 
 const App = () => {
 	const [activeScreen, setActiveScreen] = useState('home');
