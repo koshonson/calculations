@@ -3,7 +3,7 @@ import React from 'react';
 
 const Home = ({ numProblems, setNumProblems, startGame }) => {
 	return (
-		<div className="screen">
+		<div className="screen centered">
 			<div className="controls">
 				<h3>Number of Problems:</h3>
 				<input

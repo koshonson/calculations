@@ -12,16 +12,19 @@ body {
 	height: 100vh;
 }
 
+.centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .screen {
 	background-color: rgba(0, 0, 0, 0.05);
 	min-height: calc(
 		100vh - 7vmax
 	); /* 7vmax is value of navbar height, see class .menu in ./navbar.css */
 	padding: 5vmin;
-	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 }
 
 .btn {
