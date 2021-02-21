@@ -6,7 +6,31 @@
 
 body {
 	font-family: sans-serif;
-	background-color: bisque;
-	padding: 1vmin 15vmin;
+	background-color: #eee;
+	padding: 0 15vmin;
 	height: 100vh;
+}
+
+.menu {
+	height: 10vmin;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 1em;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.menu-item {
+	font-size: 1.5em;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.menu-item:hover {
+	transform: scale(1.05);
+	color: #222;
+}
+
+.menu-item-active {
+	font-weight: bolder;
 }
