@@ -1,3 +1,4 @@
+import '../styles/navbar.css';
 import React from 'react';
 
 const Navbar = ({ activeScreen, switchScreen }) => {

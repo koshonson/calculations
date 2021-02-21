@@ -2,6 +2,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	border: none;
 }
 
 body {
@@ -11,26 +12,30 @@ body {
 	height: 100vh;
 }
 
-.menu {
-	height: 10vmin;
-	background-color: rgba(0, 0, 0, 0.1);
-	padding: 1em;
+.screen {
+	background-color: rgba(0, 0, 0, 0.05);
+	min-height: calc(
+		100vh - 7vmax
+	); /* 7vmax is value of navbar height, see class .menu in ./navbar.css */
+	padding: 5vmin;
 	display: flex;
-	justify-content: space-evenly;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 }
 
-.menu-item {
-	font-size: 1.5em;
+.btn {
+	padding: 1em;
+	border-radius: 5px;
+	width: 100%;
 	cursor: pointer;
+	font-weight: bold;
+	font-size: 1.05em;
+	letter-spacing: 3px;
 	transition: 0.2s;
 }
 
-.menu-item:hover {
-	transform: scale(1.05);
-	color: #222;
-}
-
-.menu-item-active {
-	font-weight: bolder;
+.btn:hover {
+	transform: scaleX(1.05);
+	filter: invert(1);
 }
