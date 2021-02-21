@@ -1,0 +1,27 @@
+{
+	"name": "calculations",
+	"version": "1.0.0",
+	"description": "Dr. Kawashima Brain Training in simplified form",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/koshonson/calculations.git"
+	},
+	"keywords": [
+		"react",
+		"SPA",
+		"brain training",
+		"kawashima",
+		"calculations",
+		"basic math"
+	],
+	"author": "Michael Kosatka",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/koshonson/calculations/issues"
+	},
+	"homepage": "https://github.com/koshonson/calculations#readme"
+}
