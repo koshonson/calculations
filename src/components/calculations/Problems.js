@@ -1,24 +1,25 @@
 import React, { useEffect } from 'react';
 import Problem from './Problem';
 
-const Problems = ({ numProblems, updateProgress, progress }) => {
+const Problems = ({ problems, updateProgress, progress }) => {
 	useEffect(() => {
 		document.getElementById(1).focus();
 	}, []);
 
 	const renderProblems = () => {
-		const result = [];
-		for (let i = 1; i <= numProblems; i++) {
-			result.push(
+		return problems.map((problem, i) => {
+			const { expression, result: _result } = problem;
+			return (
 				<Problem
-					key={i}
-					id={i}
+					key={i + 1}
+					id={i + 1}
+					expression={expression}
+					result={_result}
 					updateProgress={updateProgress}
 					progress={progress}
 				/>
 			);
-		}
-		return result;
+		});
 	};
 
 	return <div className="problems">{renderProblems()}</div>;

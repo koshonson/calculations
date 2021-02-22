@@ -1,10 +1,12 @@
 import '../../styles/calculations.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Problems from './Problems';
 import Progress from './Progress';
 import Timer from './Timer';
+import { ProblemCaster } from '../../utils/ProblemCaster';
 
 const Caulculations = ({ numProblems }) => {
+	const [problems] = useState(ProblemCaster.castFormatedProblems(numProblems));
 	const [progress, setProgress] = useState({
 		count: numProblems,
 		done: 0,
@@ -23,7 +25,7 @@ const Caulculations = ({ numProblems }) => {
 		<div className="screen centered">
 			<div className="calculations-board">
 				<Problems
-					numProblems={numProblems}
+					problems={problems}
 					updateProgress={updateProgress}
 					progress={progress}
 				/>

@@ -1,7 +1,12 @@
 import React, { useState, useRef } from 'react';
 
-const Problem = ({ updateProgress, id, progress: { done, count } }) => {
-	const [result, setResult] = useState(8);
+const Problem = ({
+	id,
+	expression,
+	result,
+	progress: { done, count },
+	updateProgress
+}) => {
 	const [input, setInput] = useState('');
 	const [submitted, setSubmitted] = useState(false);
 	const [correct, setCorrect] = useState(null);
@@ -68,7 +73,7 @@ const Problem = ({ updateProgress, id, progress: { done, count } }) => {
 
 	return (
 		<div className={getDivClassnames()} ref={container}>
-			<span className="problem-expression">81 / 9 = </span>
+			<span className="problem-expression">{expression} = </span>
 			<input
 				className={getInputClassnames()}
 				type="text"
