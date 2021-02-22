@@ -1,17 +1,19 @@
 import React from 'react';
 
-const Progress = () => {
+const Progress = ({ progress }) => {
+	const { count, done, correct, wrong } = progress;
+
 	return (
 		<div className="progress">
-			<div className="progress-counter">5/20</div>
+			<div className="progress-counter">
+				{done}/{count}
+			</div>
 			<div className="progress-stats">
 				<div className="progress-item">
-					<div className="progress-item-key">Correct:</div>
-					<div className="progress-item-value">2</div>
+					<div className="green-text">✔ Correct: {correct}</div>
 				</div>
 				<div className="progress-item">
-					<div className="progress-item-key">Incorrect:</div>
-					<div className="progress-item-value">3</div>
+					<div className="red-text">✖ Incorrect: {wrong}</div>
 				</div>
 			</div>
 		</div>

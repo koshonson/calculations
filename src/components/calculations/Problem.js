@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-const Problem = ({ id }) => {
+const Problem = ({ updateProgress, id }) => {
 	const [result, setResult] = useState(8);
 	const [input, setInput] = useState('');
 	const [submitted, setSubmitted] = useState(false);
@@ -38,7 +38,7 @@ const Problem = ({ id }) => {
 		if (input || input === 0) {
 			setSubmitted(true);
 			setCorrect(result === input);
-			// updateProgress(result === input);
+			updateProgress(result === input);
 		}
 	};
 
