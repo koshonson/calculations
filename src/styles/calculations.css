@@ -23,10 +23,11 @@
 }
 
 .problem-result {
+	font-size: 1em;
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 2px;
-	min-width: 20px;
+	max-width: 40%;
 	margin-left: 5px;
 	padding: 1px 5px;
 	transition: 0.4s;
@@ -37,6 +38,22 @@
 	font-size: 1.1em;
 	padding: 2px 15px;
 	background-color: rgba(255, 255, 255, 1);
+}
+
+.focused {
+	border: 3px solid red;
+}
+
+.locked {
+	pointer-events: none;
+}
+
+.correct {
+	background-color: rgba(50, 250, 0, 0.5);
+}
+
+.wrong {
+	background-color: rgba(255, 0, 0, 0.5);
 }
 
 .status-ribbon {
