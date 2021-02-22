@@ -1,0 +1,139 @@
+.calculations-board {
+	flex: 1;
+	width: 100%;
+	display: grid;
+	grid-template-rows: auto minmax(50px, min-content);
+}
+.problems {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+	grid-auto-rows: minmax(40px, auto);
+	grid-gap: 5px;
+	margin-bottom: 15px;
+}
+
+.problem {
+	font-size: 1.2em;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.problem-expression {
+	cursor: default;
+	user-select: none;
+}
+
+.problem-result {
+	font-size: 1em;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 2px;
+	max-width: 40%;
+	margin-left: 5px;
+	padding: 1px 5px;
+	transition: 0.4s;
+}
+
+.problem-result:focus {
+	outline: none;
+	font-size: 1.1em;
+	padding: 2px 15px;
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.focused {
+	border: 3px solid red;
+}
+
+.locked {
+	pointer-events: none;
+}
+
+.correct {
+	background-color: rgba(50, 250, 0, 0.5);
+}
+
+.wrong {
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+.status-ribbon {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.status-ribbon > div {
+	padding: 10px;
+}
+
+.progress {
+	background-color: rgba(0, 0, 0, 0.125);
+	border-radius: 10px 0 0 10px;
+	display: flex;
+	align-items: center;
+}
+
+.progress-counter {
+	padding-left: 0.5em;
+	font-size: 3em;
+}
+
+.progress-stats {
+	padding-left: 2em;
+	display: flex;
+	flex-direction: column;
+}
+
+.progress-item {
+	margin: 2px 0;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+}
+
+.red-text {
+	color: rgba(255, 0, 0, 0.8);
+}
+
+.green-text {
+	color: rgba(50, 200, 0, 0.8);
+}
+
+.timer {
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 0 10px 10px 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	font-size: 3em;
+}
+
+.tick {
+	animation: tick 1s ease-out 0s infinite;
+}
+
+@keyframes tick {
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@media only screen and (max-width: 865px) {
+	.problems {
+		grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	}
+
+	.status-ribbon {
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	}
+
+	.progress {
+		border-radius: 10px 10px 0 0;
+	}
+
+	.timer {
+		border-radius: 0 0 10px 10px;
+	}
+}

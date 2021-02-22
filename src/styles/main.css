@@ -1,0 +1,54 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	border: none;
+}
+
+body {
+	font-family: sans-serif;
+	background-color: #eee;
+	padding: 0 15vmin;
+	height: 100vh;
+}
+
+.centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.screen {
+	background-color: rgba(0, 0, 0, 0.05);
+	min-height: calc(
+		100vh - 7vmax
+	); /* 7vmax is value of navbar height, see class .menu in ./navbar.css */
+	padding: 15px 5vmin 5vmin 5vmin;
+	flex-direction: column;
+}
+
+.btn {
+	padding: 1em;
+	border-radius: 5px;
+	width: 100%;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 1.05em;
+	letter-spacing: 3px;
+	transition: 0.2s;
+}
+
+.btn:hover {
+	transform: scaleX(1.05);
+	filter: invert(1);
+}
+
+@media only screen and (max-width: 632px) {
+	html {
+		font-size: 80%;
+	}
+
+	body {
+		padding: 0 5vmin;
+	}
+}

@@ -1,0 +1,23 @@
+.controls {
+	padding: 2em 1em 8em 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.number-input {
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
+	caret-color: transparent;
+	border-radius: 5px;
+	padding: 1em;
+	cursor: default;
+	text-align: center;
+	font-size: 1.5em;
+	margin: 0.5em 0;
+}
+
+.number-input:focus {
+	outline: none;
+	box-shadow: inset 0 0 2px 0px #999;
+}
