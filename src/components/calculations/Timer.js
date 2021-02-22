@@ -8,13 +8,14 @@ const Timer = ({ progress }) => {
 	useEffect(() => {
 		const tickSec = () => setTime(time + 1);
 		const { count, done } = progress;
+		console.log(count, done);
 		if (count !== done) {
 			setTimer(setTimeout(tickSec, 1000));
 		} else {
 			clearTimeout(timer);
 			setTimer(null);
 		}
-	}, [time]);
+	}, [time, progress]);
 
 	return (
 		<div className="timer">
