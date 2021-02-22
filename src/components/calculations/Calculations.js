@@ -26,6 +26,7 @@ const Caulculations = ({ numProblems }) => {
 				<Problems
 					numProblems={numProblems}
 					updateProgress={updateProgress}
+					progress={progress}
 				/>
 				<div className="status-ribbon">
 					<Progress progress={progress} />

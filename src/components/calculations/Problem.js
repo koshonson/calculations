@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-const Problem = ({ updateProgress, id }) => {
+const Problem = ({ updateProgress, id, progress: { done, count } }) => {
 	const [result, setResult] = useState(8);
 	const [input, setInput] = useState('');
 	const [submitted, setSubmitted] = useState(false);
@@ -21,30 +21,37 @@ const Problem = ({ updateProgress, id }) => {
 		if (
 			!submitted &&
 			target.value !== ' ' &&
-			(+target.value || +target.value === 0)
+			(+target.value || +target.value === 0 || target.value === '')
 		) {
-			setInput(parseInt(target.value.slice(0, 3)));
+			const value = parseInt(target.value.slice(0, 3));
+			if (value || value === 0) setInput(value);
+			if (isNaN(value)) setInput('');
 		}
 	};
 
 	const handleEnterSubmit = ({ key, target }) => {
 		if (key !== 'Enter') return;
 		target.blur();
-		focusNext(target.id);
-	};
-
-	const handleBlurSubmit = () => {
-		container.current.classList.remove('focused');
-		if (input || input === 0) {
-			setSubmitted(true);
-			setCorrect(result === input);
-			updateProgress(result === input);
+		if (count - 1 > done || (count - 1 === done && !input)) {
+			focusNext(target.id);
 		}
 	};
 
 	const handleFocus = ({ target }) => {
-		container.current.classList.add('focused');
-		if (submitted) focusNext(target.id);
+		if (submitted) {
+			focusNext(target.id);
+		} else {
+			container.current.classList.add('focused');
+		}
+	};
+
+	const handleBlurSubmit = ({ target }) => {
+		container.current.classList.remove('focused');
+		if (!submitted && (input || input === 0)) {
+			setSubmitted(true);
+			setCorrect(result === input);
+			updateProgress(result === input);
+		}
 	};
 
 	const getDivClassnames = () => {
