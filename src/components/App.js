@@ -8,13 +8,19 @@ const App = () => {
 	const [activeScreen, setActiveScreen] = useState('home');
 	const [numProblems, setNumProblems] = useState(20);
 
+	const updateNumProblems = num => {
+		if (num < 20) setNumProblems(20);
+		if (num >= 20 && num <= 60) setNumProblems(num);
+		if (num > 60) setNumProblems(60);
+	};
+
 	const renderScreen = activeScreen => {
 		switch (activeScreen) {
 			case 'home':
 				return (
 					<Home
 						numProblems={numProblems}
-						setNumProblems={setNumProblems}
+						updateNumProblems={updateNumProblems}
 						startGame={() => setActiveScreen('calculations')}
 					/>
 				);

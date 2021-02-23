@@ -1,7 +1,7 @@
 import '../styles/home.css';
 import React from 'react';
 
-const Home = ({ numProblems, setNumProblems, startGame }) => {
+const Home = ({ numProblems, updateNumProblems, startGame }) => {
 	return (
 		<div className="screen centered">
 			<div className="controls">
@@ -12,8 +12,8 @@ const Home = ({ numProblems, setNumProblems, startGame }) => {
 					min="20"
 					max="60"
 					step="1"
-					defaultValue={numProblems}
-					onChange={e => setNumProblems(+e.target.value)}
+					value={numProblems}
+					onChange={e => updateNumProblems(+e.target.value)}
 				></input>
 				<button className="btn" onClick={startGame}>
 					START
