@@ -5,10 +5,10 @@ const Timer = ({ progress }) => {
 	const [time, setTime] = useState(0);
 	const [timer, setTimer] = useState(null);
 
+	const { count, done } = progress;
+	const tickSec = () => setTime(time + 1);
+
 	useEffect(() => {
-		const tickSec = () => setTime(time + 1);
-		const { count, done } = progress;
-		console.log(count, done);
 		if (count !== done) {
 			setTimer(setTimeout(tickSec, 1000));
 		} else {

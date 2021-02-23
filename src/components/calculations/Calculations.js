@@ -5,7 +5,7 @@ import Progress from './Progress';
 import Timer from './Timer';
 import { ProblemCaster } from '../../utils/ProblemCaster';
 
-const Caulculations = ({ numProblems }) => {
+const Calculations = ({ numProblems }) => {
 	const [problems] = useState(ProblemCaster.castFormatedProblems(numProblems));
 	const [progress, setProgress] = useState({
 		count: numProblems,
@@ -54,4 +54,4 @@ const Caulculations = ({ numProblems }) => {
 	);
 };
 
-export default Caulculations;
+export default Calculations;

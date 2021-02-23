@@ -50,7 +50,7 @@ const Problem = ({
 		}
 	};
 
-	const handleBlurSubmit = ({ target }) => {
+	const handleBlurSubmit = () => {
 		container.current.classList.remove('focused');
 		if (!submitted && (input || input === 0)) {
 			setSubmitted(true);
