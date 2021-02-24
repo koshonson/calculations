@@ -9,7 +9,6 @@ const Problem = ({
 }) => {
 	const [input, setInput] = useState('');
 	const [submitted, setSubmitted] = useState(false);
-	const [correct, setCorrect] = useState(null);
 
 	const container = useRef();
 
@@ -54,7 +53,6 @@ const Problem = ({
 		container.current.classList.remove('focused');
 		if (!submitted && (input || input === 0)) {
 			setSubmitted(true);
-			setCorrect(result === input);
 			updateProgress(result === input);
 		}
 	};
@@ -62,7 +60,7 @@ const Problem = ({
 	const getDivClassnames = () => {
 		let baseClassnames = 'problem centered';
 		if (submitted) {
-			return (baseClassnames += correct ? ' correct' : ' wrong');
+			return (baseClassnames += result === input ? ' correct' : ' wrong');
 		}
 		return baseClassnames;
 	};

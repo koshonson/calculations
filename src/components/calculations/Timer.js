@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { CgAlarm } from 'react-icons/cg';
 
-const Timer = ({ progress }) => {
+const Timer = ({ progress: { count, done } }) => {
 	const [time, setTime] = useState(0);
 	const [timer, setTimer] = useState(null);
 
-	const { count, done } = progress;
 	const tickSec = () => setTime(time + 1);
 
 	useEffect(() => {
@@ -15,7 +14,7 @@ const Timer = ({ progress }) => {
 			clearTimeout(timer);
 			setTimer(null);
 		}
-	}, [time, progress]);
+	}, [time, done]);
 
 	return (
 		<div className="timer">
