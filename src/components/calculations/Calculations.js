@@ -1,11 +1,11 @@
 import '../../styles/calculations.css';
-import React, { useState } from 'react';
-import Problems from './Problems';
+import React, { useState, useEffect } from 'react';
+import Problem from './Problem';
 import Progress from './Progress';
 import Timer from './Timer';
 import { ProblemCaster } from '../../utils/ProblemCaster';
 
-const Caulculations = ({ numProblems }) => {
+const Calculations = ({ numProblems }) => {
 	const [problems] = useState(ProblemCaster.castFormatedProblems(numProblems));
 	const [progress, setProgress] = useState({
 		count: numProblems,
@@ -14,6 +14,10 @@ const Caulculations = ({ numProblems }) => {
 		wrong: 0
 	});
 
+	useEffect(() => {
+		document.getElementById(1).focus();
+	}, []);
+
 	const updateProgress = result => {
 		const update = { ...progress };
 		update.done++;
@@ -21,14 +25,26 @@ const Caulculations = ({ numProblems }) => {
 		setProgress(update);
 	};
 
-	return (
-		<div className="screen centered">
-			<div className="calculations-board">
-				<Problems
-					problems={problems}
+	const renderProblems = () => {
+		return problems.map((problem, i) => {
+			const { expression, result: _result } = problem;
+			return (
+				<Problem
+					key={i + 1}
+					id={i + 1}
+					expression={expression}
+					result={_result}
 					updateProgress={updateProgress}
 					progress={progress}
 				/>
+			);
+		});
+	};
+
+	return (
+		<div className="screen centered">
+			<div className="calculations-board">
+				<div className="problems">{renderProblems()}</div>
 				<div className="status-ribbon">
 					<Progress progress={progress} />
 					<Timer progress={progress} />
@@ -38,4 +54,4 @@ const Caulculations = ({ numProblems }) => {
 	);
 };
 
-export default Caulculations;
+export default Calculations;

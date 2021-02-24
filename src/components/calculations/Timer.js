@@ -1,21 +1,21 @@
+import '../../styles/timer.css';
 import React, { useState, useEffect } from 'react';
 import { CgAlarm } from 'react-icons/cg';
 
-const Timer = ({ progress }) => {
+const Timer = ({ progress: { count, done } }) => {
 	const [time, setTime] = useState(0);
 	const [timer, setTimer] = useState(null);
 
+	const tickSec = () => setTime(time + 1);
+
 	useEffect(() => {
-		const tickSec = () => setTime(time + 1);
-		const { count, done } = progress;
-		console.log(count, done);
 		if (count !== done) {
 			setTimer(setTimeout(tickSec, 1000));
 		} else {
 			clearTimeout(timer);
 			setTimer(null);
 		}
-	}, [time, progress]);
+	}, [time, done]);
 
 	return (
 		<div className="timer">
