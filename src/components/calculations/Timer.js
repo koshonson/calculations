@@ -1,3 +1,4 @@
+import '../../styles/timer.css';
 import React, { useState, useEffect } from 'react';
 import { CgAlarm } from 'react-icons/cg';
 
