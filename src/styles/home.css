@@ -5,19 +5,86 @@
 	align-items: center;
 }
 
-.number-input {
+.number-input-container {
+	display: flex;
+	margin: 0.75em 0;
+}
+
+.btn-input {
+	font-size: 2em;
+	font-weight: bolder;
+	width: 10vmin;
+	transition: 0.4s;
+}
+
+.btn-input:hover {
+	cursor: pointer;
+	font-size: 2.25em;
+	filter: invert(0.1);
+}
+
+.btn-input:active {
+	box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.rounded-left {
+	border-radius: 8px 0 0 8px;
+}
+
+.rounded-right {
+	border-radius: 0 8px 8px 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
+	margin: 0;
+}
+
+.number-input {
 	-moz-appearance: textfield;
 	caret-color: transparent;
-	border-radius: 5px;
-	padding: 1em;
+	padding: 0.75em 0.25em;
 	cursor: default;
 	text-align: center;
 	font-size: 1.75em;
-	margin: 0.5em 0;
+	font-family: sans-serif;
+	width: 15vw;
 }
 
 .number-input:focus {
 	outline: none;
-	box-shadow: inset 0 0 2px 0px #999;
+	box-shadow: inset 0 0 4px 0px #999;
+}
+
+.number-input:hover {
+	color: rgba(0, 100, 120, 1);
+	box-shadow: inset 0 0 6px 0px #aaa;
+}
+
+.home-icon {
+	padding: 1vmin;
+	font-size: 5em;
+	margin-bottom: 1em;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 20px;
+	box-shadow: 0 0 25px -2px #fff, inset 0 0 25px 2px #fff;
+	transition: 1s;
+}
+
+.home-icon:hover {
+	cursor: none;
+	transform: scale(1.1);
+	animation: rainbow-text 10s linear 0s infinite;
+}
+
+/* prettier-ignore */
+@keyframes rainbow-text {
+	0% {color: black;}
+	10% {color: darkmagenta;}
+	30% {color: blue;}
+	50% {color: lime;}
+	70% {color: orange;}
+	90% {color: red;}
+	100% {color: black;}
 }
