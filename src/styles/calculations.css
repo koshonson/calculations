@@ -2,7 +2,7 @@
 	flex: 1;
 	width: 100%;
 	display: grid;
-	grid-template-rows: minmax(70vh, auto) max-content;
+	grid-template-rows: minmax(65vh, auto) max-content;
 }
 .problems {
 	display: grid;
